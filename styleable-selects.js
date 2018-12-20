@@ -1,5 +1,5 @@
+/* eslint-disable no-var */
 function makeStyleableSelects() {
-
   function addClass(element, className) {
     var classes = element.className.split(' ');
     for (var i = 0; i < classes.length; i++) {
@@ -35,14 +35,13 @@ function makeStyleableSelects() {
 
   function removeClass(element, className) {
     var classes = element.className.split(' ');
-    classes = classes.filter(clazz => clazz !== className);
+    classes = classes.filter(c => c !== className);
     element.className = classes.join(' ');
   }
 
   function setValue(option) {
     var select = findAncestorByClass(option, 'styleable-select');
     var span = select.querySelector('.styleable-select-current > span');
-    var img = select.querySelector('.styleable-select-current > img');
     var newValue = option.textContent;
     span.textContent = newValue;
     select.value = option.getAttribute('value') || newValue;
@@ -53,7 +52,7 @@ function makeStyleableSelects() {
     event.initEvent('change', true, true);
     select.dispatchEvent(event);
 
-    var event = document.createEvent('UIEvents');
+    event = document.createEvent('UIEvents');
     event.initEvent('blur', true, true);
     select.dispatchEvent(event);
   }
@@ -192,7 +191,7 @@ function makeStyleableSelects() {
     for (var j = 0; j < options.length; j++) {
       var option = options.item(j);
 
-      option.onclick = function (event) {
+      option.onclick = function () {
         setValue(this);
       };
     }

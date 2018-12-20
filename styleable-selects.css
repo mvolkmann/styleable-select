@@ -9,7 +9,7 @@ label {
 .styleable-select {
   display: inline-block;
   font-family: sans-serif;
-  //width: auto;
+  /*width: auto;*/
   width: 150px;
 }
 
@@ -21,7 +21,6 @@ label {
 
 .styleable-select-current > img {
   float: right;
-  //height: 80%;
 }
 
 .styleable-select-current > img.open {
@@ -40,6 +39,7 @@ label {
 }
 
 .styleable-select-list > option {
+  display: block;
   padding: 4px 8px;
 }
 
