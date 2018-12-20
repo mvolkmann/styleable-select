@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+}
+
+label {
+  font-weight: bold;
+}
+
+.styleable-select {
+  display: inline-block;
+  font-family: sans-serif;
+  //width: auto;
+  width: 150px;
+}
+
+.styleable-select-current {
+  border: solid lightgray 1px;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.styleable-select-current > img {
+  float: right;
+  //height: 80%;
+}
+
+.styleable-select-current > img.open {
+  float: right;
+  transform: rotate(180deg);
+}
+
+.styleable-select-list {
+  background-color: white;
+  border: solid lightgray 1px;
+  border-radius: 4px;
+  display: none;
+  padding: 4px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.styleable-select-list > option {
+  padding: 4px 8px;
+}
+
+.styleable-select-list > option.current {
+  background-color: blue;
+  color: white;
+}
+

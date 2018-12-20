@@ -1,30 +1,29 @@
 <html>
   <head>
+    <link rel="stylesheet" href="styleable-selects.css">
     <link rel="stylesheet" href="demo.css">
+    <script src="styleable-selects.js"></script>
     <script src="demo.js"></script>
   </head>
   <body>
-    <label for="pick">Pick</label>
-    <select id="pick">
-      <option>Red</option>
-      <option>Green</option>
-      <option>Blue</option>
-    </select>
-
     <div>
-      <div class="my-select">
-        <div class="my-select-current">
-          <span class="value">Select Color</span>
-          <img src="down-angle.png">
-        </div>
-        <div class="my-select-list">
-          <option>Red</option>
-          <option>Green</option>
-          <option>Blue</option>
-        </div>
-      </div>
+      <label for="color-select">Choose Color</label>
+      <select id="color-select" value="g">
+        <option value="r">Red</option>
+        <option value="g">Green</option>
+        <option value="b">Blue</option>
+      </select>
+    </div>
     <div>
-
+      <label for="season-select">Choose Season</label>
+      <select id="season-select">
+        <option></option>
+        <option>Winter</option>
+        <option>Spring</option>
+        <option>Summer</option>
+        <option>Fall</option>
+      </select>
+    </div>
     <div>Another line</div>
   </body>
 </html>
