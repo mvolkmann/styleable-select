@@ -35,6 +35,7 @@ label {
   display: none;
   padding: 4px 0;
   position: absolute;
+  width: 150px;
   z-index: 1;
 }
 
