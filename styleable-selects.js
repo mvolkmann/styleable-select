@@ -18,6 +18,10 @@ function makeStyleableSelects() {
     removeClass(img, 'open');
   }
 
+  function different(s1, s2) {
+    return s1 !== s2;
+  }
+
   function findAncestorByClass(element, className) {
     while (element && !hasClass(element, className)) {
       element = element.parentNode;
@@ -35,7 +39,7 @@ function makeStyleableSelects() {
 
   function removeClass(element, className) {
     var classes = element.className.split(' ');
-    classes = classes.filter(c => c !== className);
+    classes = classes.filter(different);
     element.className = classes.join(' ');
   }
 
@@ -91,6 +95,8 @@ function makeStyleableSelects() {
     img.setAttribute('class', shouldOpen ? 'open' : '');
   }
 
+  var option;
+
   var selects = document.querySelectorAll('select');
   for (var i = 0; i < selects.length; i++) {
     var select = selects.item(i);
@@ -117,8 +123,9 @@ function makeStyleableSelects() {
 
     // Move option children from select to current.
     var options = select.querySelectorAll('option');
-    for (var j = 0; j < options.length; j++) {
-      var option = options.item(j);
+    var j;
+    for (j = 0; j < options.length; j++) {
+      option = options.item(j);
       if (value === option.getAttribute('value')) {
         span.textContent = option.textContent;
       }
@@ -188,8 +195,8 @@ function makeStyleableSelects() {
 
     current.onclick = toggleOpen;
 
-    for (var j = 0; j < options.length; j++) {
-      var option = options.item(j);
+    for (j = 0; j < options.length; j++) {
+      option = options.item(j);
 
       option.onclick = function () {
         setValue(this);
