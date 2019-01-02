@@ -1,4 +1,4 @@
-# styleable-selects
+# styleable-select
 
 HTML select elements can only be styled by CSS in limited ways.
 This replaces all DOM select elements with a set of DOM elements
